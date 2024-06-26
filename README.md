@@ -49,7 +49,10 @@ from glass-standard-378403.SQL.businesses
 where year_founded < 1000 
 ```
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/8f9f9730-2ee6-4ded-bc55-26dafd49575a/74769030-0e2d-444e-b184-78bb26116e55/Untitled.png)
+| business_before_1000 |
+|----------------------|
+| 6                    |
+
 
 ## **2. Which businesses were founded before 1000?**
 
@@ -61,16 +64,22 @@ from glass-standard-378403.SQL.businesses
 where year_founded < 1000 
 order by business
 ```
+| business                    |
+|-----------------------------|
+| Kongō Gumi                  |
+| Monnaie de Paris            |
+| Sean's Bar                  |
+| St. Peter Stifts Kulinarium |
+| Staffelter Hof Winery       |
+| The Royal Mint              |
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/8f9f9730-2ee6-4ded-bc55-26dafd49575a/952cc300-7d43-41c1-aeac-619198a75a87/Untitled.png)
+
 
 ## **3. Exploring the categories**
 
 Now we know that the oldest, continuously operating company in the world is called Kongō Gumi. But was does that company do? The category codes in the `businesses` table aren't very helpful: the descriptions of the categories are stored in the `categories` table.
 
 This is a common problem: for data storage, it's better to keep different types of data in different tables, but for analysis, you want all the data in one place. To solve this, you'll have to join the two tables together.
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/8f9f9730-2ee6-4ded-bc55-26dafd49575a/1c1b04a3-fc0e-4bd4-ac44-dc6ec7a72c65/Untitled.png)
 
 ```
 Select business, category_code, string_field_1 as categories
@@ -83,6 +92,16 @@ from (
 left join  glass-standard-378403.SQL.categories as category_table
 on table_1.category_code = category_table.string_field_0
 ```
+
+
+| business                    | category_code | categories                        |
+|-----------------------------|---------------|-----------------------------------|
+| Kongō Gumi                  | CAT6          | Construction                      |
+| St. Peter Stifts Kulinarium | CAT4          | Cafés, Restaurants & Bars         |
+| The Royal Mint              | CAT12         | Manufacturing & Production        |
+| Monnaie de Paris            | CAT12         | Manufacturing & Production        |
+| Staffelter Hof Winery       | CAT9          | Distillers, Vintners, & Breweries |
+| Sean's Bar                  | CAT4          | Cafés, Restaurants & Bars         |
 
 ## **4. Counting the categories[¶](https://sessions.datacamp.com/proxy/absolute/c56ac02c-dced-4605-ae8b-5eab7f904f0e/notebooks/production/users/12209077/dsbv0gi66a/notebooks/notebook.ipynb#5.-Counting-the-categories)**
 
@@ -104,7 +123,28 @@ group by  categories
 order by categorie_count desc
 ```
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/8f9f9730-2ee6-4ded-bc55-26dafd49575a/180454b1-c7da-4f0b-971a-1941c5d638b4/Untitled.png)
+| categorie_count | categories                        |
+|-----------------|-----------------------------------|
+| 37              | Banking & Finance                 |
+| 22              | Distillers, Vintners, & Breweries |
+| 19              | Aviation & Transport              |
+| 16              | Postal Service                    |
+| 15              | Manufacturing & Production        |
+| 7               | Media                             |
+| 6               | Food & Beverages                  |
+| 6               | Agriculture                       |
+| 6               | Cafés, Restaurants & Bars         |
+| 4               | Energy                            |
+| 4               | Retail                            |
+| 4               | Tourism & Hotels                  |
+| 3               | Mining                            |
+| 3               | Defense                           |
+| 3               | Conglomerate                      |
+| 3               | Consumer Goods                    |
+| 2               | Construction                      |
+| 2               | Telecommunications                |
+| 1               | Medical                           |
+
 
 ## **5. Oldest business by continent**
 
@@ -129,7 +169,15 @@ WHERE rn = 1
 ORDER BY year_founded
 ```
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/8f9f9730-2ee6-4ded-bc55-26dafd49575a/bea0bd77-b4a5-4f59-a2c1-860f17c72247/Untitled.png)
+| business                    | year_founded | continent     |
+|-----------------------------|--------------|---------------|
+| Kongō Gumi                  | 578          | Asia          |
+| St. Peter Stifts Kulinarium | 803          | Europe        |
+| La Casa de Moneda de México | 1534         | North America |
+| Casa Nacional de Moneda     | 1565         | South America |
+| Mauritius Post              | 1772         | Africa        |
+| Australia Post              | 1809         | Oceania       |
+
 
 ## **6. Joining everything for further analysis**
 
