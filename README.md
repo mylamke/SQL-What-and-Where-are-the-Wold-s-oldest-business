@@ -7,7 +7,7 @@ An important aspect of business involves planning for the future and ensuring re
 
 The data is dispersed across multiple datasets, necessitating the use of joining techniques to consolidate information. By merging these datasets, we can employ manipulation tools like grouping and filtering to gain insights into these enduring businesses. This analysis will reveal when these businesses were established and the diverse industries they represent, shedding light on their remarkable longevity and adaptive strategies in a dynamic market environment.
 
-2. Dataset 
+2. Dataset  
 
 The database contains three tables.
 
