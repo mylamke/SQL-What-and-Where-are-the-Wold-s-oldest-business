@@ -1,8 +1,8 @@
 # SQL-What-and-Where-are-the-Wold-s-oldest-business
-# I. INTRODUCTION  
+# I. INTRODUCTION
  
 1. Project Description
-
+ 
 An important aspect of business involves planning for the future and ensuring resilience against changing market conditions. Some businesses excel in this area, enduring for centuries. This project aims to analyze data from BusinessFinancing.co.uk on the world's oldest businesses, focusing on their founding dates and industries.
 
 The data is dispersed across multiple datasets, necessitating the use of joining techniques to consolidate information. By merging these datasets, we can employ manipulation tools like grouping and filtering to gain insights into these enduring businesses. This analysis will reveal when these businesses were established and the diverse industries they represent, shedding light on their remarkable longevity and adaptive strategies in a dynamic market environment.
