@@ -11,7 +11,7 @@ The data is dispersed across multiple datasets, necessitating the use of joining
 
 The database contains three tables.
 
-### **`categories`**
+### **`categories`** 
 
 | column | type | meaning |
 | --- | --- | --- |
