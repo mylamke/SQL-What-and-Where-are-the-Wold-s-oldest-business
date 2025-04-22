@@ -9,7 +9,7 @@ The data is dispersed across multiple datasets, necessitating the use of joining
 
 2. Dataset  
 
-The database contains three tables.
+The database contains three tables. 
 
 ### **`categories`** 
 
