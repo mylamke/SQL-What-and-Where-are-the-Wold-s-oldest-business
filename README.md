@@ -25,7 +25,7 @@ The database contains three tables.
 | country_code | varchar | ISO 3166-1 3-letter country code. |
 | country | varchar | Name of the country. |
 | continent | varchar | Name of the continent that the country exists in. |
-
+ 
 ### **`businesses`**
 
 | column | type | meaning |
